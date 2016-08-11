@@ -1,0 +1,6 @@
+framework module Pods_SimpleCheckin {
+  umbrella header "Pods-SimpleCheckin-umbrella.h"
+
+  export *
+  module * { export * }
+}
