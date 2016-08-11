@@ -94,12 +94,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34" y="310"/>
+            <point key="canvasLocation" x="24" y="310"/>
         </scene>
-        <!--View Controller-->
+        <!--Checkin View Controller-->
         <scene sceneID="9b9-cD-fuS">
             <objects>
-                <viewController id="dQM-GH-rHL" sceneMemberID="viewController">
+                <viewController id="dQM-GH-rHL" customClass="CheckinViewController" customModule="SimpleCheckin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xgS-Ko-7jy"/>
                         <viewControllerLayoutGuide type="bottom" id="M69-A7-gCC"/>
@@ -107,10 +107,59 @@
                     <view key="view" contentMode="scaleToFill" id="zHq-La-xsS">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="13320876_10105598919532196_5603443221065824_o" translatesAutoresizingMaskIntoConstraints="NO" id="fnx-sj-Cty">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="o79-6r-IMs">
+                                <rect key="frame" x="348" y="95" width="328" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="AEg-wh-vCz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Host Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EGb-kC-pbn">
+                                <rect key="frame" x="348" y="142" width="328" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="gb1-y3-4cN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KW-Fd-VAz">
+                                <rect key="frame" x="451" y="180" width="123" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="Rbt-Fj-4k5"/>
+                                    <constraint firstAttribute="height" constant="30" id="S6U-eA-paH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Checkin"/>
+                                <connections>
+                                    <action selector="checkinButton:" destination="dQM-GH-rHL" eventType="touchUpInside" id="7gn-Sw-jMX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fnx-sj-Cty" firstAttribute="centerX" secondItem="EGb-kC-pbn" secondAttribute="centerX" id="6hl-Sg-UcF"/>
+                            <constraint firstItem="2KW-Fd-VAz" firstAttribute="top" secondItem="EGb-kC-pbn" secondAttribute="bottom" constant="8" symbolic="YES" id="8C0-kY-QuK"/>
+                            <constraint firstItem="fnx-sj-Cty" firstAttribute="bottom" secondItem="M69-A7-gCC" secondAttribute="top" id="H7n-1l-HLx"/>
+                            <constraint firstItem="fnx-sj-Cty" firstAttribute="centerX" secondItem="2KW-Fd-VAz" secondAttribute="centerX" id="IbX-2J-FvJ"/>
+                            <constraint firstItem="fnx-sj-Cty" firstAttribute="leading" secondItem="zHq-La-xsS" secondAttribute="leading" id="N7T-yF-Kjn"/>
+                            <constraint firstItem="fnx-sj-Cty" firstAttribute="top" secondItem="zHq-La-xsS" secondAttribute="top" id="Njs-7Y-DwR"/>
+                            <constraint firstItem="EGb-kC-pbn" firstAttribute="top" secondItem="o79-6r-IMs" secondAttribute="bottom" constant="17" id="XiU-if-xeh"/>
+                            <constraint firstAttribute="trailing" secondItem="fnx-sj-Cty" secondAttribute="trailing" id="kTQ-6I-hyP"/>
+                            <constraint firstItem="fnx-sj-Cty" firstAttribute="centerX" secondItem="o79-6r-IMs" secondAttribute="centerX" id="tfa-bU-akK"/>
+                            <constraint firstItem="o79-6r-IMs" firstAttribute="top" secondItem="xgS-Ko-7jy" secondAttribute="bottom" constant="75" id="vsI-Nj-wZK"/>
+                        </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="hostField" destination="EGb-kC-pbn" id="XNH-nC-2nw"/>
+                        <outlet property="nameField" destination="o79-6r-IMs" id="fui-bD-9RM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Wn-Yl-n9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,5 +168,6 @@
     </scenes>
     <resources>
         <image name="12976712_10105455196279746_4851952905228113878_o" width="2048" height="1151"/>
+        <image name="13320876_10105598919532196_5603443221065824_o" width="2048" height="1366"/>
     </resources>
 </document>
