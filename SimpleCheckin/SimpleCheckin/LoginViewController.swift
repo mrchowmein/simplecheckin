@@ -30,7 +30,10 @@ class LoginViewController: UIViewController {
             
             FIRAuth.auth()?.signInWithEmail(emailField.text!, password:passwordField.text!) { (user, error) in
                 if error != nil {
-                    print(error!.description)
+                    let alertController = UIAlertController(title: "Not so fast!", message:
+                        "Incorrect Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
                     
                 else {
@@ -41,6 +44,8 @@ class LoginViewController: UIViewController {
             }
             
         }
+        
+        view.endEditing(true)
     }
     
     
@@ -105,6 +110,18 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func viewDidAppear(animated: Bool) {
+        FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth:FIRAuth, user:FIRUser?) in
+            if let user = user {
+                print("Welcome \(user.email)")
+                self.performSegueWithIdentifier("checkinSegue", sender: nil)
+            }else{
+                print("You need to sign up or login first")
+            }
+        })
+        
+    }
+    
+    
 }
 

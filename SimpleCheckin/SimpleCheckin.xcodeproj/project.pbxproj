@@ -16,6 +16,7 @@
 		ED26AA961D5C413B0056EF98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED26AA951D5C413B0056EF98 /* GoogleService-Info.plist */; };
 		ED26AA981D5C41590056EF98 /* guests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED26AA971D5C41590056EF98 /* guests.swift */; };
 		ED5E163D1D5D042F005E7797 /* CheckinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E163C1D5D042F005E7797 /* CheckinViewController.swift */; };
+		EDC361731D5D686A00C880D9 /* GuestLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC361721D5D686A00C880D9 /* GuestLogTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ED26AA951D5C413B0056EF98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED26AA971D5C41590056EF98 /* guests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guests.swift; sourceTree = "<group>"; };
 		ED5E163C1D5D042F005E7797 /* CheckinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckinViewController.swift; sourceTree = "<group>"; };
+		EDC361721D5D686A00C880D9 /* GuestLogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestLogTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +86,10 @@
 		ED26AA821D5C40580056EF98 /* SimpleCheckin */ = {
 			isa = PBXGroup;
 			children = (
+				ED26AA871D5C40580056EF98 /* Main.storyboard */,
 				ED26AA831D5C40580056EF98 /* AppDelegate.swift */,
 				ED26AA851D5C40580056EF98 /* LoginViewController.swift */,
-				ED26AA871D5C40580056EF98 /* Main.storyboard */,
+				EDC361721D5D686A00C880D9 /* GuestLogTableViewController.swift */,
 				ED5E163C1D5D042F005E7797 /* CheckinViewController.swift */,
 				ED26AA8A1D5C40580056EF98 /* Assets.xcassets */,
 				ED26AA8C1D5C40580056EF98 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 				TargetAttributes = {
 					ED26AA7F1D5C40580056EF98 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YTB7DJCBLA;
 					};
 				};
 			};
@@ -228,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC361731D5D686A00C880D9 /* GuestLogTableViewController.swift in Sources */,
 				ED26AA861D5C40580056EF98 /* LoginViewController.swift in Sources */,
 				ED26AA841D5C40580056EF98 /* AppDelegate.swift in Sources */,
 				ED5E163D1D5D042F005E7797 /* CheckinViewController.swift in Sources */,
@@ -347,10 +352,12 @@
 			baseConfigurationReference = 12B6CF79589C491E9C24B92E /* Pods-SimpleCheckin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SimpleCheckin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.SimpleCheckin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -359,10 +366,12 @@
 			baseConfigurationReference = 5028EF7ED252BDEF09E025E9 /* Pods-SimpleCheckin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SimpleCheckin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.SimpleCheckin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
