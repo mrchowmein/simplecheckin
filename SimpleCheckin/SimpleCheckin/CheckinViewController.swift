@@ -41,21 +41,21 @@ class CheckinViewController: UIViewController,  UIImagePickerControllerDelegate,
             nameField.text = ""
             hostField.text = ""
             
-            //printing
-            
-            let printController = UIPrintInteractionController.sharedPrintController()
-            
-            let printInfo = UIPrintInfo(dictionary:nil)
-            printInfo.outputType = UIPrintInfoOutputType.General
-            printInfo.jobName = "print Job"
-            printController.printInfo = printInfo
-            
-            
-            let formatter = UIMarkupTextPrintFormatter(markupText: guestName! + " \n" + hostName! + " \n" + now)
-            formatter.contentInsets = UIEdgeInsets(top: 72, left: 72, bottom: 72, right: 72)
-            printController.printFormatter = formatter
-            
-            printController.presentAnimated(true, completionHandler: nil)
+//            //printing
+//            
+//            let printController = UIPrintInteractionController.sharedPrintController()
+//            
+//            let printInfo = UIPrintInfo(dictionary:nil)
+//            printInfo.outputType = UIPrintInfoOutputType.General
+//            printInfo.jobName = "print Job"
+//            printController.printInfo = printInfo
+//            
+//            
+//            let formatter = UIMarkupTextPrintFormatter(markupText: guestName! + " \n" + hostName! + " \n" + now)
+//            formatter.contentInsets = UIEdgeInsets(top: 72, left: 72, bottom: 72, right: 72)
+//            printController.printFormatter = formatter
+//            
+//            printController.presentAnimated(true, completionHandler: nil)
             
         } else {
             
